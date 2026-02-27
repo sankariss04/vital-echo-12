@@ -1,4 +1,4 @@
-import { Heart, LayoutDashboard, BarChart3, LogOut } from 'lucide-react';
+import { Heart, LayoutDashboard, BarChart3, Video, LogOut } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '@/lib/authContext';
 
@@ -9,6 +9,7 @@ const DashboardNav = () => {
   const links = [
     { to: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { to: '/metrics', label: 'Model Metrics', icon: BarChart3 },
+    { to: '/go-live', label: 'Go Live', icon: Video },
   ];
 
   return (
