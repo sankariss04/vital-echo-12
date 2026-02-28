@@ -10,7 +10,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
 import Metrics from "./pages/Metrics";
-import GoLive from "./pages/GoLive";
+import StressRadar from "./pages/StressRadar";
 import Alerts from "./pages/Alerts";
 import Reports from "./pages/Reports";
 import Profile from "./pages/Profile";
@@ -43,7 +43,7 @@ const App = () => (
               <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
               <Route path="/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
               <Route path="/metrics" element={<ProtectedRoute><Metrics /></ProtectedRoute>} />
-              <Route path="/go-live" element={<ProtectedRoute><GoLive /></ProtectedRoute>} />
+              <Route path="/stress-radar" element={<ProtectedRoute><StressRadar /></ProtectedRoute>} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </AuthProvider>

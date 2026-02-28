@@ -11,7 +11,7 @@ const DashboardNav = () => {
     { to: '/alerts', label: 'Alerts', icon: Bell },
     { to: '/reports', label: 'Reports', icon: FileText },
     { to: '/metrics', label: 'Model Metrics', icon: BarChart3 },
-    { to: '/go-live', label: 'Go Live', icon: Video },
+    { to: '/stress-radar', label: 'Stress Radar', icon: Video },
     { to: '/profile', label: 'Profile', icon: User },
     { to: '/settings', label: 'Settings', icon: Settings },
   ];
