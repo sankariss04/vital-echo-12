@@ -16,7 +16,7 @@ const AdvisoryPanel = ({ advice, riskLevel }: AdvisoryPanelProps) => {
   const Icon = c.icon;
 
   return (
-    <div className="glass-card p-6">
+    <div className="glass-card-hover p-6">
       <h3 className="font-display font-semibold text-foreground mb-3">Preventive Advisory</h3>
       <div className={`${c.bg} border ${c.border} rounded-xl p-4 mb-4`}>
         <div className="flex items-center gap-2 mb-2">
@@ -26,7 +26,7 @@ const AdvisoryPanel = ({ advice, riskLevel }: AdvisoryPanelProps) => {
       </div>
       <ul className="space-y-3">
         {advice.map((a, i) => (
-          <li key={i} className="flex gap-3 text-sm text-foreground/80">
+          <li key={i} className="flex gap-3 text-sm text-foreground/80 hover-lift p-2 rounded-lg">
             <AlertTriangle className="w-4 h-4 mt-0.5 shrink-0 text-muted-foreground" />
             <span>{a}</span>
           </li>

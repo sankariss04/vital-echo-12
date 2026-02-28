@@ -24,8 +24,8 @@ const Metrics = () => {
 
         {/* Metric cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 animate-slide-up">
-          {cards.map(c => (
-            <div key={c.label} className={`${c.color} rounded-2xl p-5 shadow-card`}>
+          {cards.map((c, i) => (
+            <div key={c.label} className={`${c.color} rounded-2xl p-5 shadow-card hover-lift`} style={{ animationDelay: `${i * 0.1}s` }}>
               <p className="text-sm text-foreground/60 font-medium">{c.label}</p>
               <p className="text-3xl font-display font-bold text-foreground mt-1">
                 {(c.value * 100).toFixed(1)}%
@@ -35,7 +35,7 @@ const Metrics = () => {
         </div>
 
         {/* Confusion Matrix */}
-        <div className="glass-card p-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+        <div className="glass-card-hover p-6 animate-slide-up" style={{ animationDelay: '0.1s' }}>
           <h3 className="font-display font-semibold text-foreground mb-4">Confusion Matrix</h3>
           <div className="overflow-x-auto">
             <table className="w-full max-w-lg mx-auto">
@@ -74,18 +74,18 @@ const Metrics = () => {
         </div>
 
         {/* Model info */}
-        <div className="glass-card p-6 mt-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+        <div className="glass-card-hover p-6 mt-6 animate-slide-up" style={{ animationDelay: '0.2s' }}>
           <h3 className="font-display font-semibold text-foreground mb-3">Model Details</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
             <div className="space-y-2">
-              <div className="flex justify-between"><span className="text-muted-foreground">Algorithm</span><span className="font-medium text-foreground">Random Forest</span></div>
-              <div className="flex justify-between"><span className="text-muted-foreground">Estimators</span><span className="font-medium text-foreground">100 trees</span></div>
-              <div className="flex justify-between"><span className="text-muted-foreground">Max Depth</span><span className="font-medium text-foreground">10</span></div>
+              <div className="flex justify-between hover-lift p-2 rounded-lg"><span className="text-muted-foreground">Algorithm</span><span className="font-medium text-foreground">Random Forest</span></div>
+              <div className="flex justify-between hover-lift p-2 rounded-lg"><span className="text-muted-foreground">Estimators</span><span className="font-medium text-foreground">100 trees</span></div>
+              <div className="flex justify-between hover-lift p-2 rounded-lg"><span className="text-muted-foreground">Max Depth</span><span className="font-medium text-foreground">10</span></div>
             </div>
             <div className="space-y-2">
-              <div className="flex justify-between"><span className="text-muted-foreground">Features</span><span className="font-medium text-foreground">5 passive signals</span></div>
-              <div className="flex justify-between"><span className="text-muted-foreground">Classes</span><span className="font-medium text-foreground">3 (Low / Moderate / High)</span></div>
-              <div className="flex justify-between"><span className="text-muted-foreground">Cross-validation</span><span className="font-medium text-foreground">5-fold stratified</span></div>
+              <div className="flex justify-between hover-lift p-2 rounded-lg"><span className="text-muted-foreground">Features</span><span className="font-medium text-foreground">5 passive signals</span></div>
+              <div className="flex justify-between hover-lift p-2 rounded-lg"><span className="text-muted-foreground">Classes</span><span className="font-medium text-foreground">3 (Low / Moderate / High)</span></div>
+              <div className="flex justify-between hover-lift p-2 rounded-lg"><span className="text-muted-foreground">Cross-validation</span><span className="font-medium text-foreground">5-fold stratified</span></div>
             </div>
           </div>
         </div>

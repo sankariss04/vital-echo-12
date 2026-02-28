@@ -25,13 +25,13 @@ const HealthForm = ({ onSubmit, loading }: HealthFormProps) => {
   };
 
   return (
-    <div className="glass-card p-6">
+    <div className="glass-card-hover p-6">
       <h3 className="font-display font-semibold text-foreground mb-4">Health Signal Input</h3>
       <div className="space-y-5">
         {fields.map(f => {
           const Icon = f.icon;
           return (
-            <div key={f.key}>
+            <div key={f.key} className="hover-lift p-3 -mx-3 rounded-lg transition-all">
               <div className="flex items-center gap-2 mb-1.5">
                 <Icon className="w-4 h-4 text-primary" />
                 <label className="text-sm font-medium text-foreground">{f.label}</label>
@@ -56,7 +56,7 @@ const HealthForm = ({ onSubmit, loading }: HealthFormProps) => {
       <button
         onClick={() => onSubmit(values)}
         disabled={loading}
-        className="w-full mt-6 py-3 rounded-xl bg-accent text-accent-foreground font-semibold hover:opacity-90 transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+        className="w-full mt-6 py-3 rounded-xl bg-accent text-accent-foreground font-semibold hover:opacity-90 transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-soft hover:shadow-hover hover:scale-[1.02]"
       >
         {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Activity className="w-4 h-4" />}
         {loading ? 'Analyzing...' : 'Analyze Health Signals'}

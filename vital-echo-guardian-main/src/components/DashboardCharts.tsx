@@ -32,7 +32,7 @@ const DashboardCharts = ({ prediction }: ChartsProps) => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
       {/* HRV Trend */}
-      <div className="glass-card p-6">
+      <div className="glass-card-hover p-6">
         <h3 className="font-display font-semibold text-foreground mb-4">HRV Trend (14 Days)</h3>
         <ResponsiveContainer width="100%" height={220}>
           <LineChart data={trendData}>
@@ -46,7 +46,7 @@ const DashboardCharts = ({ prediction }: ChartsProps) => {
       </div>
 
       {/* Activity Bar */}
-      <div className="glass-card p-6">
+      <div className="glass-card-hover p-6">
         <h3 className="font-display font-semibold text-foreground mb-4">Daily Steps</h3>
         <ResponsiveContainer width="100%" height={220}>
           <BarChart data={trendData}>
@@ -60,7 +60,7 @@ const DashboardCharts = ({ prediction }: ChartsProps) => {
       </div>
 
       {/* Risk Probability Pie */}
-      <div className="glass-card p-6">
+      <div className="glass-card-hover p-6">
         <h3 className="font-display font-semibold text-foreground mb-4">Risk Probability</h3>
         <ResponsiveContainer width="100%" height={220}>
           <PieChart>
@@ -76,7 +76,7 @@ const DashboardCharts = ({ prediction }: ChartsProps) => {
       </div>
 
       {/* Feature Importance */}
-      <div className="glass-card p-6">
+      <div className="glass-card-hover p-6">
         <h3 className="font-display font-semibold text-foreground mb-2">Why Am I At Risk?</h3>
         <p className="text-xs text-muted-foreground mb-4">Feature contribution to prediction</p>
         {prediction ? (
@@ -101,7 +101,7 @@ const DashboardCharts = ({ prediction }: ChartsProps) => {
       </div>
 
       {/* Risk Trend Projection */}
-      <div className="glass-card p-6 lg:col-span-2">
+      <div className="glass-card-hover p-6 lg:col-span-2">
         <h3 className="font-display font-semibold text-foreground mb-1">7-Day Risk Projection</h3>
         <p className="text-xs text-muted-foreground mb-4">Historical trend + projected risk (dashed)</p>
         <ResponsiveContainer width="100%" height={220}>
