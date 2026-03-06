@@ -196,9 +196,17 @@ const StressRadar = () => {
 
     // Check if session is complete
     if (timeRemaining === 0) {
-      handleSessionComplete();
+      setIsSessionActive(false);
+      setSessionComplete(true);
+      setBreathPhase('idle');
+
+      // Simulate HRV improvement (+5% to 10%)
+      const improvementPercent = 5 + Math.random() * 5;
+      const newHRV = Math.round(hrv * (1 + improvementPercent / 100));
+      setHrvImprovement(improvementPercent);
+      setHrv(newHRV);
     }
-  }, [timeRemaining, isSessionActive]);
+  }, [timeRemaining, isSessionActive, hrv]);
 
   // Echo Relax timer effect
   useEffect(() => {

@@ -31,6 +31,14 @@ const generateTrendData = (days: number) => {
   return data;
 };
 
+type TrendDataItem = {
+  date: string;
+  riskScore: number;
+  hrv: number;
+  sleepHours: number;
+  stress: number;
+};
+
 const TrendsPanel = ({ prediction }: TrendsPanelProps) => {
   const [timeRange, setTimeRange] = useState<'7' | '30' | 'custom'>('7');
 
@@ -46,8 +54,8 @@ const TrendsPanel = ({ prediction }: TrendsPanelProps) => {
     const thisWeek = trendData.slice(-7);
     const lastWeek = trendData.slice(-14, -7);
     
-    const avg = (arr: typeof trendData, key: string) => 
-      arr.reduce((sum, d) => sum + (d as any)[key], 0) / arr.length;
+    const avg = (arr: TrendDataItem[], key: keyof TrendDataItem) => 
+      arr.reduce((sum, d) => sum + (d[key] as number), 0) / arr.length;
     
     const thisWeekRisk = avg(thisWeek, 'riskScore');
     const lastWeekRisk = avg(lastWeek, 'riskScore');
